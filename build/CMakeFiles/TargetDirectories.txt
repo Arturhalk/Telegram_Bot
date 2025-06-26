@@ -1,0 +1,3 @@
+/home/user/projects/Telegram-bot/build/CMakeFiles/Bot.dir
+/home/user/projects/Telegram-bot/build/CMakeFiles/edit_cache.dir
+/home/user/projects/Telegram-bot/build/CMakeFiles/rebuild_cache.dir

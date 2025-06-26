@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -lpqxx -lpq CMakeFiles/Bot.dir/main.cc.o -o Bot  /usr/local/lib/libTgBot.a /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0 /usr/lib/x86_64-linux-gnu/libcurl.so /usr/lib/x86_64-linux-gnu/libpqxx.so /usr/lib/x86_64-linux-gnu/libpq.so 
