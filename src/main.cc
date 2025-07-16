@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
-    BotTG();
+    AnimalPictureService service;
+    service.Start();
     return 0;
 }
