@@ -1,6 +1,37 @@
 #include "Bot.h"
+#include "db.h"
 
-void AnimalPictureService::Start() {}
+void AnimalPictureService::Start()
+{
+    // mBot->getEvents().onCommand("start", [this](TgBot::Message::Ptr message)
+    //                             {
+    //     int64_t userId = GetUserID(message);
+    //     SendedPictureDBManager check;
+    //     auto a = check.CheckingUserInDB(userId);
+        
+    // });
+    // TgLongPoll();     
+}
+
+size_t AnimalPictureService::GetUserID(TgBot::Message::Ptr message) { return message->from->id; }
+
+void AnimalPictureService::TgLongPoll()
+{
+    try
+    {
+        TgBot::TgLongPoll longPoll(*mBot);
+        while (true)
+        {
+            printf("Long poll started\n");
+            longPoll.start();
+            printf("Long poll ended\n");
+        }
+    }
+    catch (TgBot::TgException &e)
+    {
+        printf("error: %s\n", e.what());
+    }
+}
 
 AnimalPictureService::AnimalPictureService()
 {
@@ -8,19 +39,13 @@ AnimalPictureService::AnimalPictureService()
     {
         mBot = std::make_unique<TgBot::Bot>("7779372699:AAEmijaJMUUgD7xcaXC0VSZqpUck9XDnhzU");
     }
-    catch (TgBot::TgException &e)
-    {
-        std::cout << e.what() << std::endl;    
-    }
-    if (mBot->getApi().getMe())
-    {
-        std::cout << "Успешное подключение Тг-бота!" << std::endl;
-    }
-    else
+    catch (TgBot::TgException &e) // изменить тип исключения
     {
         std::cout << "Боту не удалось подключиться" << std::endl;
+        std::cout << e.what() << std::endl;
     }
-} 
+    std::cout << "Успешное подключение Тг-бота!" << std::endl;
+}
 
 // std::filesystem::path RecordingPictures()
 // {

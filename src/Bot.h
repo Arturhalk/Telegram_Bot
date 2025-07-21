@@ -11,8 +11,9 @@ class AnimalPictureService
 {
 public:
     void Start();
+    size_t GetUserID(TgBot::Message::Ptr message);
     AnimalPictureService();
-
+    void TgLongPoll();
 private:
     std::unique_ptr<TgBot::Bot> mBot;
 };
